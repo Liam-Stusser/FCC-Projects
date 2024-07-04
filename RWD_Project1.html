@@ -1,0 +1,72 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Survey Form Practice Project</title>
+    </head>
+    <body>
+      <!--
+        1. h1 element with id of title
+        2. p element with an id of description
+        3. form element with an id of survey-form
+        -->
+        <fieldset>
+        <h1 id="title">Favorite Car</h1>
+        <p id="description">Let us know which was your favorite car out of the vehicles we talked about today</p>
+        </fieldset>
+        <form id="survey-form">
+          <!-- 
+            4.Enter your name in an input field 
+            5.Enter your email in an input field 
+            6.User must enter a valid email or error pops up
+            7.Enter a number in an input field
+            8.Number input should not accept non-numbers
+            9.Number input must have a min and max range
+           -->
+           <!--first 3 input-->
+           <fieldset>
+           <label id="name-label">Enter your name:<input id="name" type="text" placeholder="Jhon Doe..." required></label> <!-- must have id name and type text -->
+  <label id="email-label">Enter your email address:<input id="email" type="email" placeholder="example@email.com" required></label> <!--must contain an id of email-->
+           <label id="number-label">Enter your age:<input id="number" type="number" min="13" max="99" placeholder="13-99" required></label> <!--must contain an id of number-->
+           <!--select input-->
+           <label for="dropdown">Select your gender:</label>
+           <select id="dropdown" required>
+           <option>Select</option>
+           <option>Male</option>
+           <option>Female</option>
+           <option>Other</option>
+           </select>
+           </fieldset>
+           <!--radio inputs-->
+           <fieldset>
+           <p>Select your favorite brand we talked about today</p>
+           <label for="radio1"><input id="radio1" name="car" type="radio" value="Toyota" checked> Toyota</label>
+           <label for="radio2"><input id="radio2" name="car" type="radio" value="Honda"> Honda</label>
+           <!--checkboxes-->
+           <p>Which cars did you like the most that were talked about?</p>
+           <label for="Corolla"><input id="Corolla" type="checkbox" value="Corolla"> Corolla</label>
+           <label for="Rav4"><input id="Rav4" type="checkbox" value="Rav4"> Rav4</label>
+           <label for="Forester"><input id="Forester" type="checkbox" value="Forester"> Forester</label>
+           <label for="Outback"><input id="Outback" type="checkbox" value="Outback"> Outback</label>
+           </fieldset>
+           <!--text area-->
+           <p>Let us know if you would like to add anything else</p>
+           <textarea rows="8" cols="40" placeholder="Thank you..."></textarea>
+             <!--submitbutton-->
+             <button id="submit">Submit</button> <!--must have id of submit-->
+           <!--      
+            10.All inputs should have label elements which describe the purpose of each field
+            11.The name,number,and email fields should have placeholder text with appropiate description.
+            12.Have a select element with at least two options to choose from
+            13.Have two radio inputs that both have the same name attribute
+            14.Have multiple checkboxes, each with a value attribute
+            15.Have a textarea for additional comments
+            16.Have a submit button with id of submit
+            -->
+        </form>
+      <footer>
+        <p>Created by Liam Stusser 2024</p>
+        </footer>
+      </body>
+      
