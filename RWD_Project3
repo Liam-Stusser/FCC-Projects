@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"> 
+    <meta name="description" content="Technical Documentation Page">
+    <title>Introduction to HTML and CSS</title>
+    <link rel="stylesheet" href="styles2.css">
+    </head>
+
+    <body>
+
+<nav id="navbar">
+  <header>HTML & CSS</header>
+  <ul>
+    <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+    <li><a class="nav-link" href="#HTML_Basics">HTML Basics</a></li>
+    <li><a class="nav-link" href="#HTML_Elements">HTML Elements</a></li>
+    <li><a class="nav-link" href="#CSS_Basics">CSS Basics</a></li>
+    <li><a class="nav-link" href="#CSS_Properties">CSS Properties</a></li>
+    </ul>
+  <!--The navbar should always be on the left side of the screen and always be visible to the user -->
+  </nav>
+
+      <main id="main-doc"> 
+      <section class="main-section" id="Introduction"> 
+        <header>Introduction</header>
+        <p>HTML and CSS are programming languages that were created to develop web pages and style them, each language has its own unique elements, properties, attributes, and values. HTML stands for hyper text markup language and CSS stands for Cascading Style Sheets. HTML will create the skeleton of the website and CSS will finalize the webaite by adding color, positioning the elements, and styling the borders and margins. <i>(ex)-</i> </p>
+        <code>&lt;meta charset=&quot;UTF-8&quot;&gt;<br>
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;<br>
+    &lt;title&gt;Introduction to HTML and CSS&lt;/title&gt;<br>
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;</code>
+        <p>This page will not make you an expert at using HTML and CSS but will give you an overview of the basics and serve as a general introduction. There are a few things you will need first if you want to start coding with HTML and CSS </p>
+        <ul class="underline">Base Knowledge
+          <li>Profecient knowledge of english</li>
+          <li>A computer or laptop</li>
+          <li>An IDE installed on your device</li>
+          </ul>
+          <hr>
+        </section>
+
+         <section class="main-section" id="HTML_Basics">
+        <header>HTML Basics</header>
+        <p>All HTML documents will have an opening tag and a closing tag which the "&lt" character is used. An opening tag will look like "&lt &gt" and a closing tag will look like "&lt/ &gt". All HTML documents will start with &lt!DOCTYPE html&gt at the top of the page. Typically it will be followed with a head element &lthead&gt and a body element &ltbody&gt.  </p>
+        <code>&lt!DOCTYPE html&gt<br>&lthtml lang="en"&gt<br>&ltbody&gt<br>&lt/body&gt<br>&lt/html&gt
+        </code>
+        <p>The content inside the tags is called an element which contains a specific keyword in the HTML code base that tells the browser what to do. For example the (p) element tells the browser that the content is a distinct block of text, typically separated from surrounding content with margin space. This helps to structure and format the text content in a readable manner within the web document.</p>
+        <hr>
+        </section>
+
+         <section class="main-section" id="HTML_Elements">
+        <header>HTML Elements</header>
+        <p>There are many elements in the HTML code base, too many to go over in this basic overview. There are a few key basic elements though that we can go over. </p>
+        <ul>Basic HTML Elements
+          <li>h1-h6</li>
+          <li>p</li>
+          <li>main</li>
+          <li>section</li>
+          </ul>
+        <p>h1 stands for a heading element and is used for the main heading of a webpage. There is also h2,h3,h4,h5, and h6. The lower the number, the higher the importance. We described p in the section above, but typically p is used to create a paragraph of text, like the one you are reading now. The main element is used to contain the main content of the body in your HTML document. The section element is used to create seperate content in your main element like chapters of a book.</p>
+        <code>&lt!DOCTYPE html&gt<br>&lthtml&gt<br>&ltbody&gt<br>&ltmain&gt<br>&ltsection&gt<br>&lth1&gt&lt/h1&gt<br>&lth2&gt&lt/h2&gt<br>&lth3&gt&lt/h3&gt<br>&lt/section&gt<br>&ltsection&gt<br>&lth4&gt&lt/h4&gt<br>&lth5&gt&lt/h5&gt<br>&lth6&gt&lt/h6&gt<br>&lt/section&gt<br>&lt/main&gt<br>&lt/html&gt</code>
+        <hr>
+        </section>
+
+         <section class="main-section" id="CSS_Basics">
+        <header>CSS Basics</header>
+        <p>The structure of CSS is different from HTML, rather than using tags you will simply type the key words into your CSS document. In CSS you will use what is called a selector to target the HTML element you want to style and then use the {} after the selector, inside the {} you will type in the property you want to use to style the HTML element. The property syntax will look like this <strong>property: value;</strong> the property must be followed by the ":" character and the ";" character declares the line is closed.</p>
+        <code>h1{<br>text-align: center;<br>}</code>
+        <p></p>This tells all your h1 elements to align the text in them to the center of the users screen. The easiest and most basic CSS selector to learn is the element selector. Simply type in the element you would like to style followed with the {} and it will select all of your targeted elements and apply the property you want.
+        <hr>
+        </section>
+
+         <section class="main-section" id="CSS_Properties">
+        <header>CSS Properties</header>
+        <p>Before we can apply a CSS property to our HTML elements we first have to link a CSS style sheet to our HTML document. This can be done by using the list element in your html document. In the head element type in &ltlink rel="stylesheet" href="styles.css"&gt make sure you name your CSS document styles.css or substitute what you would like to name your CSS document into the qutation marks of the href in the link element.</p>
+        <ul>Basic CSS Properties
+          <li>text-align (values: left, right, center, justify, start, end, inherit, inital, and unset)</li>
+          <li>color (values: red, blue, green, etc...)</li>
+          <li>font-family (values: impact, serif, arial, verdana, geneva, sans-serif, and many more)</li>
+          <li>font-size (values: small, medium, large or you can set a custome size with #px) </li>
+          </ul>
+        <code>h1{<br>text-align: left;<br>color: blue;<br> font-family: impact;<br>font-size: medium;<br>}</code>
+        <p>This will make it so all of your h1 elements have their text aligned to the left of the screen, the color of the text to be blue, the style of the text will be in impact, and the text will be medium in size. You now have the basics to code a basic text document web-page with HTML and be able to style the text on the page with CSS. </p>
+        </section>
+
+        </main>
+
+      <footer>
+        </footer>
+
+      </body>
+  </html>
