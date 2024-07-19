@@ -184,3 +184,59 @@
       padding: 15px;
     }
   }  
+
+  /* Media query for screens smaller than 600px  */
+@media screen and (max-width: 600px) {
+  header {
+    height: 60px;
+    padding: 10px;
+  }
+
+  #navbar > ul > li {
+    font-size: 16px;
+    margin: 0 10px;
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  #welcome-section > p {
+    font-size: 16px;
+    position: static;
+    margin-top: 10px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr; 
+    gap: 10px;
+    padding: 0;
+  }
+
+  .project-tile {
+    height: auto; 
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .project-tile img {
+    height: 60%; 
+  }
+
+  .project-tile p {
+    font-size: 16px;
+    top: auto; 
+  }
+
+  #contact_links a {
+    font-size: 16px;
+  }
+
+  footer {
+    padding: 10px;
+  }
+}
