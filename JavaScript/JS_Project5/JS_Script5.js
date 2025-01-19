@@ -102,3 +102,11 @@ searchButton.addEventListener("click", async ()=>{
     console.log(pokemonData);
     updateStatsDisplay(pokemonData);
 })
+
+document.addEventListener("keydown", async (event) => {
+    if(event.key === "Enter"){
+        const pokemon = cleanInput(pokemonInput.value);
+        const pokemonData = await getPokemonData(pokemon);
+        updateStatsDisplay(pokemonData);
+    }
+})
