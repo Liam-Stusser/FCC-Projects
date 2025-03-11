@@ -2,37 +2,45 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: path.resolve(__dirname, 'FrontEndLibraries/FEL_Project1/FEL_Script1.js'),
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/',  // Ensure assets are served from the root
   },
-  mode: 'development',
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
-        }
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
+        },
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      }
-    ]
+        use: ['style-loader', 'css-loader'],  // Add loaders for CSS
+      },
+    ],
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx'],
+  },
+  devServer: {
+    static: {
+      directory: path.resolve(__dirname, 'FrontEndLibraries/FEL_Project1'), // Serve static files properly
+    },
+    compress: true,
+    port: 9000,
+    open: true,
+    hot: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html'
-    })
+      template: './FrontEndLibraries/FEL_Project1/FEL_Project1.html',  // Path to your HTML file
+    }),
   ],
-  devServer: {
-    static: './dist',
-    hot: true
-  }
 };
