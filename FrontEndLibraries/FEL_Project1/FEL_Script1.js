@@ -2,7 +2,6 @@ import { configureStore, createSlice } from "@reduxjs/toolkit";
 import { Provider, connect } from "react-redux";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./FrontEndLibraries/FEL_Project1/FEL_styles1.css";
 //Declare Quotes 25 in total
 const quotesArray = [
     { quote: "May the Force be with you.", author: "Star Wars" },
@@ -33,7 +32,7 @@ const quotesArray = [
   ];
   
   //Initializes a random value for quotes on load
-  let random = Math.floor(Math.random() * quotesArray.length);
+  let random = Math.floor(Math.random() * 25);
   
   //Redux
   const NEW = "NEW";
@@ -72,7 +71,7 @@ const quotesArray = [
       this.newQuote = this.newQuote.bind(this);
     }
     newQuote() {
-      let random = Math.floor(Math.random() * 26);
+      let random = Math.floor(Math.random() * 25);
       const newQuote = {
         quote: quotesArray[random].quote,
         author: quotesArray[random].author
