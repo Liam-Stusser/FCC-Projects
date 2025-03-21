@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: path.resolve(__dirname, 'FrontEndLibraries/FEL_Project2/FEL_Script2.js'),
+  entry: path.resolve(__dirname, 'FrontEndLibraries/FEL_Project4/FEL_Script4.js'),
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -31,7 +31,7 @@ module.exports = {
   },
   devServer: {
     static: {
-      directory: path.resolve(__dirname, 'FrontEndLibraries/FEL_Project2'), // Serve static files properly
+      directory: path.resolve(__dirname, 'FrontEndLibraries/FEL_Project4'), // Serve static files properly
     },
     compress: true,
     port: 9000,
@@ -40,7 +40,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './FrontEndLibraries/FEL_Project2/FEL_Project2.html',  // Path to your HTML file
+      template: './FrontEndLibraries/FEL_Project4/FEL_Project4.html',  // Path to your HTML file
     }),
   ],
 };
