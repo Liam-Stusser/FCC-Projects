@@ -1,0 +1,45 @@
+body {
+    background-color: #121212;
+    color: #d4d4d4;
+    font-family: Arial, sans-serif;
+  }
+  
+  #container {
+    text-align: center;
+    background-color: #2a2a2a;
+    padding: 20px;
+    border: solid;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin: 20px auto;
+    width: 80%;
+  }
+  
+  #title {
+    font-size: 24px;
+    color: #e0e0e0;
+    margin-bottom: 10px;
+  }
+  
+  #tooltip {
+    position: absolute;
+    visibility: hidden;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    pointer-events: none;
+  }
+  
+  .bar {
+    fill: rgb(22, 5, 118);
+    opacity: 0.8;
+    stroke: white;
+    stroke-width: 1px;
+  }
+  
+  rect:hover {
+    fill: darkblue;
+    opacity: 1;
+  }
+  
