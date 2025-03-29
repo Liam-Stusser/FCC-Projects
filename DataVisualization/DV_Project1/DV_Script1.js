@@ -8,7 +8,7 @@ const svg = d3
   .select("#chart")
   .attr("width", width)
   .attr("height", height);
-
+ 
 let dataArray = [];
 
 async function fetchData() {
