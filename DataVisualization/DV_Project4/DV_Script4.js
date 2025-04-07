@@ -46,7 +46,6 @@ let drawMap = () => {
             return '#5A5A5A'
         }
     })
-    .attr('stroke', '#ffffff')
     .attr('stroke-width', 0.4)
     .attr('data-fips', (d => d['id']))
     .attr('data-education', countyDataItem => {
@@ -72,9 +71,6 @@ let drawMap = () => {
     })
     .on("mouseout", function () {
         d3.select("#tooltip").style("visibility", "hidden");
-    
-        d3.select(this)
-          .attr("stroke", "none");
       });
 }
 
