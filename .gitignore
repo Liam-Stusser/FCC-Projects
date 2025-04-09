@@ -1,4 +1,25 @@
+# === Node / Frontend ===
 node_modules/
 npm-debug.log
 dist/
 build/
+
+# === C# / .NET ===
+**/bin/
+**/obj/
+
+# Ignore Visual Studio / Rider IDE stuff
+.vs/
+*.user
+*.suo
+*.sln.docstates
+*.sln.iml
+.idea/
+
+# Dotnet CLI artifacts
+project.lock.json
+project.fragment.lock.json
+
+# === System Files ===
+.DS_Store
+Thumbs.db
