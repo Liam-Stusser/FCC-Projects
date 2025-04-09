@@ -45,14 +45,6 @@ While using **Redux** for simpler apps may be overkill, the intention is to **pr
 
 ---
 
-## 📝 A Note on FEL Projects
-
-The **Front End Libraries** projects originally had to be done in **CodePen**, but I wanted to build them locally to get more hands-on experience setting up React and Redux the way you would in a real project.
-
-That means these versions use a custom `webpack.config.js`, and I made a few tweaks to get things working smoothly. I know Redux is a bit much for some of these small apps, but the goal was to learn how it works in different scenarios.
-
----
-
 ## 🧪 About the C# Projects
 
 I’ve recently started exploring **C# and .NET**, so I added a new folder called `CsharpProjects/` for future experiments and practice. These are console-based applications for now, and I’m using them to dive deeper into:
