@@ -197,7 +197,7 @@ foreach(string original in myStrings){
     string myString = original;
     int periodLocation = original.IndexOf('.');
     bool lastCheck = true;
-
+    
     do
     {
         if(periodLocation == -1){
@@ -380,3 +380,415 @@ string[] splitIpv4 = ip.Split(".");
 }
 }
 */
+
+//testing refernce type variables in a method
+/*
+int a = 3;
+int b = 4;
+int c = 0;
+
+Multiply(a,b,c);
+Console.WriteLine($"Global statement: {a} x {b} = {c}");
+
+void Multiply(int a, int b, int c)
+{
+    c = a*b;
+    Console.WriteLine($"Inside multiply method: {a} x {b} = {c}");
+}
+*/
+
+//Note for future used a name variable for the domain name, this way the domain defaults to contoso or 
+//you can specify the external domain in the parameter of the method.
+/*
+string[,] corporate = 
+{
+    {"Robert", "Bavin"}, {"Simon", "Bright"},
+    {"Kim", "Sinclair"}, {"Aashrita", "Kamath"},
+    {"Sarah", "Delucchi"}, {"Sinan", "Ali"}
+};
+
+string[,] external = 
+{
+    {"Vinnie", "Ashton"}, {"Cody", "Dysart"},
+    {"Shay", "Lawrence"}, {"Daren", "Valdes"}
+};
+
+string externalDomain = "hayworth.com";
+
+for (int i = 0; i < corporate.GetLength(0); i++) 
+{
+    string email = NameToEmail(corporate[i,0],corporate[i,1]) + "@contoso.com";
+    Console.WriteLine(email);
+}
+
+for (int i = 0; i < external.GetLength(0); i++) 
+{
+    string email = NameToEmail(external[i,0], external[i,1]) + "@" + externalDomain;
+    Console.WriteLine(email);
+}
+
+static string NameToEmail(string firstName, string lastName) {
+    string firstTwoInitals = firstName.Substring(0,2).ToLower();
+    string last = lastName.ToLower();
+    string email = firstTwoInitals + last;
+    return email;
+}
+*/
+
+//Improved dice game
+/*
+Random rand = new Random();
+
+Console.WriteLine("Would you like to play? (Y/N)");
+
+if(ShouldPlay()){
+    PlayGame();
+}else{
+    Console.WriteLine("See you next time! Rerun the program to start over");
+}
+
+string WinOrLose(int roll, int target) {
+
+    return roll > target ? "You Win!" : "Sorry you Lose";
+}
+
+ void PlayGame() {
+    bool gameLoop = true;
+
+    while(gameLoop){
+        int target = rand.Next(1,6);
+        int roll = rand.Next(1,7);
+
+        Console.WriteLine($"Roll a number greater than {target} to win!");
+        Console.WriteLine($"You rolled a {roll}");
+        Console.WriteLine(WinOrLose(roll,target));
+        Console.WriteLine("\nPlay again? (Y/N)");
+        gameLoop = ShouldPlay();
+    }
+ }
+
+ static bool ShouldPlay(){
+
+    string? input = Console.ReadLine();
+
+    if(input != null){
+        input = input.Trim().ToLower();
+        if (input == "y")
+            return true;
+        else if (input == "n")
+            return false;
+        else
+        {
+            Console.WriteLine("Please enter Y or N");
+            return ShouldPlay();
+        }
+    }else{
+        Console.WriteLine("Please enter a valid response");
+        return ShouldPlay();
+    }
+    
+}
+*/
+
+//D20 I made in 2 minutes
+/*
+Random rand = new Random();
+bool loop = true;
+
+int Roll() {
+int d20 = rand.Next(1,21);
+return d20;
+}
+
+while(loop){
+    Console.WriteLine("Roll dice (y/n)");
+    string? input = Console.ReadLine();
+    if(input != null){
+        input = input.Trim().ToLower();
+        if(input == "y"){
+            Console.WriteLine(Roll());
+        }
+        else if(input == "n"){
+            loop = false;
+            break;
+        }
+        else{
+            Console.WriteLine("Please enter a valid input");
+        }
+    }else{
+        Console.WriteLine("Please enter a response");
+    }
+}
+*/
+
+//Zoo Practice Problem
+/*
+string[] pettingZoo = 
+{
+    "alpacas", "capybaras", "chickens", "ducks", "emus", "geese", 
+    "goats", "iguanas", "kangaroos", "lemurs", "llamas", "macaws", 
+    "ostriches", "pigs", "ponies", "rabbits", "sheep", "tortoises",
+};
+
+PlanSchoolVisit("School A");
+PlanSchoolVisit("School B", 3);
+PlanSchoolVisit("School C", 2);
+
+void PlanSchoolVisit(string schoolName, int groups = 6) {
+    RandomizeAnimals();
+    string[,] group1 = AssignGroup(groups);
+    Console.WriteLine(schoolName);
+    PrintGroup(group1);
+}
+
+void RandomizeAnimals(){
+    Random rand = new Random();
+    for(int i = pettingZoo.Length - 1; i >= 0; i--){
+        int j = rand.Next(i+1);
+        (pettingZoo[i], pettingZoo[j]) = (pettingZoo[j], pettingZoo[i]);
+    }
+}
+
+string[,] AssignGroup(int groups = 6){
+    string[,] result = new string [groups, pettingZoo.Length/groups];
+    int start = 0;
+    for(int i = 0; i < groups; i++){
+
+        for(int j = 0; j < result.GetLength(1); j++){
+            result[i,j] = pettingZoo[start++];
+        }
+
+    }
+
+    return result;
+};
+
+void PrintGroup(string[,] group) {
+    for(int i = 0; i < group.GetLength(0); i++){
+        Console.Write($"Group {i + 1}: ");
+        for(int j = 0; j < group.GetLength(1); j++){
+            Console.Write($"{group[i,j]}, ");
+        }
+        Console.WriteLine();
+    }
+}
+*/
+
+//Mini-Game
+/*
+Random random = new Random();
+Console.CursorVisible = false;
+int height = Console.WindowHeight - 1;
+int width = Console.WindowWidth - 5;
+bool shouldExit = false;
+
+// Console position of the player
+int playerX = 0;
+int playerY = 0;
+
+// Console position of the food
+int foodX = 0;
+int foodY = 0;
+
+// Available player and food strings
+string[] states = {"('-')", "(^-^)", "(X_X)"};
+string[] foods = {"@@@@@", "$$$$$", "#####"};
+
+// Current player string displayed in the Console
+string player = states[0];
+
+// Index of the current food
+int food = 0;
+
+InitializeGame();
+while (!shouldExit) 
+{
+    if(TerminalResized())
+        EndGame();
+
+    Move();
+}
+
+// Returns true if the Terminal was resized 
+bool TerminalResized() 
+{
+    return height != Console.WindowHeight - 1 || width != Console.WindowWidth - 5;
+}
+
+// Displays random food at a random location
+void ShowFood() 
+{
+    // Update food to a random index
+    food = random.Next(0, foods.Length);
+
+    // Update food position to a random location
+    foodX = random.Next(0, width - player.Length);
+    foodY = random.Next(0, height - 1);
+
+    // Display the food at the location
+    Console.SetCursorPosition(foodX, foodY);
+    Console.Write(foods[food]);
+}
+
+// Changes the player to match the food consumed
+void ChangePlayer() 
+{
+    player = states[food];
+    Console.SetCursorPosition(playerX, playerY);
+    Console.Write(player);
+}
+
+// Temporarily stops the player from moving
+void FreezePlayer() 
+{
+    Thread.Sleep(1000);
+    player = states[0];
+}
+
+// Reads directional input from the Console and moves the player
+void Move() 
+{
+    int lastX = playerX;
+    int lastY = playerY;
+    
+    switch (Console.ReadKey(true).Key) 
+    {
+        case ConsoleKey.UpArrow:
+            playerY--; 
+            break;
+		case ConsoleKey.DownArrow: 
+            playerY++; 
+            break;
+		case ConsoleKey.LeftArrow:  
+            playerX--; 
+            break;
+		case ConsoleKey.RightArrow: 
+            playerX++; 
+            break;
+		case ConsoleKey.Escape:     
+            shouldExit = true; 
+            break;
+        default:
+            EndGame();
+            break;
+    }
+
+    // Clear the characters at the previous position
+    Console.SetCursorPosition(lastX, lastY);
+    for (int i = 0; i < player.Length; i++) 
+    {
+        Console.Write(" ");
+    }
+
+    // Keep player position within the bounds of the Terminal window
+    playerX = (playerX < 0) ? 0 : (playerX >= width ? width : playerX);
+    playerY = (playerY < 0) ? 0 : (playerY >= height ? height : playerY);
+
+    // Draw the player at the new location
+    Console.SetCursorPosition(playerX, playerY);
+    Console.Write(player);
+}
+
+// Clears the console, displays the food and player
+void InitializeGame() 
+{
+    Console.Clear();
+    ShowFood();
+    Console.SetCursorPosition(0, 0);
+    Console.Write(player);
+}
+
+void EndGame(){
+    Console.Clear();
+    Console.WriteLine("Console was resized. Program exiting");
+    shouldExit = true;
+}
+*/
+
+//Error handeling 
+try
+{
+    OperatingProcedure1();
+}
+catch (Exception ex)
+{
+    Console.WriteLine(ex.Message);
+    Console.WriteLine("Exiting application.");
+}
+
+static void OperatingProcedure1()
+{
+    string[][] userEnteredValues = new string[][]
+    {
+        new string[] { "1", "two", "3"},
+        new string[] { "0", "1", "2"}
+    };
+
+    foreach(string[] userEntries in userEnteredValues)
+    {
+        try
+        {
+            BusinessProcess1(userEntries);
+        }
+        catch (Exception ex)
+        {
+            if (ex.StackTrace.Contains("BusinessProcess1"))
+            {
+                if (ex is FormatException)
+                {
+                    Console.WriteLine(ex.Message);
+                    Console.WriteLine("Corrective action taken in OperatingProcedure1");
+                }
+                else if (ex is DivideByZeroException)
+                {
+                    Console.WriteLine(ex.Message);
+                    Console.WriteLine("Partial correction in OperatingProcedure1 - further action required");
+
+                    // re-throw the original exception
+                    throw;
+                }
+                else
+                {
+                    // create a new exception object that wraps the original exception
+                    throw new ApplicationException("An error occurred - ", ex);
+                }
+            }
+        }
+
+    }
+}
+
+static void BusinessProcess1(string[] userEntries)
+{
+    int valueEntered;
+
+    foreach (string userValue in userEntries)
+    {
+        try
+        {
+            valueEntered = int.Parse(userValue);
+
+            checked
+            {
+                int calculatedValue = 4 / valueEntered;
+            }
+        }
+        catch (FormatException)
+        {
+            FormatException invalidFormatException = new FormatException("FormatException: User input values in 'BusinessProcess1' must be valid integers");
+            throw invalidFormatException;
+        }
+        catch (DivideByZeroException)
+        {
+            DivideByZeroException unexpectedDivideByZeroException = new DivideByZeroException("DivideByZeroException: Calculation in 'BusinessProcess1' encountered an unexpected divide by zero");
+            throw unexpectedDivideByZeroException;
+
+        }
+    }
+}
+
+
+    
+
+
+    
