@@ -786,9 +786,3 @@ static void BusinessProcess1(string[] userEntries)
         }
     }
 }
-
-
-    
-
-
-    
