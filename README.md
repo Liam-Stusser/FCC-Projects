@@ -15,7 +15,7 @@ I'm using **Visual Studio Code** and the **Live Server extension** to run HTML a
 - **React, Redux, React-Redux**
 - **jQuery**
 - **D3.js**
-- **C# (.NET 8, Console Projects)** 🌱 *(Recently added)*
+- **C# (.NET 8, Console Projects)**
 
 ---
 
