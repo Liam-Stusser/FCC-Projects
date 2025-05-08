@@ -16,6 +16,7 @@ I'm using **Visual Studio Code** and the **Live Server extension** to run HTML a
 - **jQuery**
 - **D3.js**
 - **C# (.NET 8, Console Projects)**
+- **Python**
 
 ---
 
@@ -54,7 +55,7 @@ I’ve recently started exploring **C# and .NET**, so I added a new folder calle
 - Backend logic and structure
 - Gaining some cross-language perspective alongside frontend tools
 
-More projects will be added here over time — nothing too flashy yet, but they’re helping me build a stronger foundation.
+More projects will be added here over time — nothing too flashy.
 
 ---
 
