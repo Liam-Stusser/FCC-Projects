@@ -59,16 +59,16 @@ More projects will be added here over time — nothing too flashy.
 
 ---
 
-## 🌟 Highlights
+##  Highlights
 
-- ✅ Rebuilt React + Redux projects outside CodePen with custom Webpack setup
-- 🧠 Diving into backend fundamentals using .NET and C#
-- 🎨 Created interactive data visualizations using D3.js
-- 💡 Applied real-world use of Redux for managing complex UI state
+-  Rebuilt React + Redux projects outside CodePen with custom Webpack setup
+-  Diving into backend fundamentals using .NET and C#
+-  Created interactive data visualizations using D3.js
+-  Applied real-world use of Redux for managing complex UI state
 
 ---
 
-## 🚫 A Quick Note
+##  A Quick Note
 
 Please don’t directly copy any of this code for your own FCC submissions. This repo is meant for reference, learning, and showing the kinds of projects I’ve worked on — not as a shortcut to certification.
 
