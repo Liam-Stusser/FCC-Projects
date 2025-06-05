@@ -706,6 +706,7 @@ void EndGame(){
 */
 
 //Error handeling 
+/*
 try
 {
     OperatingProcedure1();
@@ -786,3 +787,4 @@ static void BusinessProcess1(string[] userEntries)
         }
     }
 }
+*/
