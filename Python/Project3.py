@@ -92,7 +92,6 @@ def create_spend_chart(categories):
     return chart.rstrip("\n")
 
 #Testing
-
 food = Category('Food')
 clothing = Category('Clothing')
 auto = Category('Auto')
