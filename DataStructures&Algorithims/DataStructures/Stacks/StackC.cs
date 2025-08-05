@@ -1,8 +1,8 @@
 /* An unsafe, high-performance implementation of a stack using a singly linked list stored in unmanaged memory.
 This stack is optimized for single-threaded use and avoids GC pressure by allocating nodes on the unmanaged heap.
 Warning:
-- This stack is **not thread-safe**.
-- It only supports **unmanaged types (where T : unmanaged)** — using reference types (e.g, string, object) may result
+- This stack is *not thread-safe*.
+- It only supports *unmanaged types (where T : unmanaged)* - using reference types (e.g, string, object) may result
 in crashes or undefined behavior due to the garbage collector relocating referenced objects.
 - Manual memory management is required, you must call 'Dispose()' to avoid memory leaks.
  */
