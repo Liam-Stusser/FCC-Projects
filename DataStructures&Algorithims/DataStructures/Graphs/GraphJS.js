@@ -158,3 +158,5 @@ class Graph
         return false;
     }
 }
+
+export default Graph;
