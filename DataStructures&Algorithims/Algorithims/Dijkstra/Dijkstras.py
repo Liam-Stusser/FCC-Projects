@@ -1,8 +1,8 @@
 from DataStructures.Graphs.Graph import Graph
 
 class Dijkstra(Graph):
-    def __init__(self):
-        super().__init__()
+    def __init__(self,size):
+        super().__init__(size)
     
     def dijkstra(self, start_vertex_data, end_vertex_data):
         start_vertex = self.vertex_data.index(start_vertex_data)
